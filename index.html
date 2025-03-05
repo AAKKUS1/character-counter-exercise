@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>counter-words</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="logo">
+					<img src="assets/Logo (2).svg" />
+					<p>Character Counter</p>
+				</div>
+				<button>
+					<img src="/assets/Settings Icon.svg" />
+				</button>
+			</nav>
+		</header>
+
+		<main>
+			<h1>Analyze your text in real-time</h1>
+			<section class="textarea-container">
+				<textarea></textarea>
+				<div class="checkbox-container">
+					<div>
+						<input type="checkbox" id="ExcludeSpaces" name="ExcludeSpaces" class="checkbox"/>
+						<label for="ExcludeSpaces">Exclude Spaces</label>
+					</div>
+					<div>
+						<input type="checkbox" id="CharacterLimit" class="checkbox"/>
+						<label for="CharacterLimit">Set Character Limit</label>
+					</div>
+				</div>
+			</section>
+			<section class="stats-container">
+				<div class="stat-card" id="purple-card">
+					<p class="counter">00</p>
+					<p class="counter-name">Total Characters</p>
+				</div>
+				<div class="stat-card" id="orange-card">
+					<p class="counter">00</p>
+					<p class="counter-name">Word Count</p>
+				</div>
+				<div class="stat-card" id="red-card">
+					<p class="counter">00</p>
+					<p class="counter-name">Sentences Count</p>
+				</div>
+			</section>
+		</main>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+    const textarea = document.querySelector('.textarea-container textarea');
+    const wordCountElement = document.querySelector('#orange-card .counter');
+    const sentenceCountElement = document.querySelector('#red-card .counter');
+    const charCountElement = document.querySelector('#purple-card .counter');
+
+    textarea.addEventListener('input', () => {
+        const text = textarea.value;
+        const wordCount = countWords(text);
+        const sentenceCount = countSentences(text);
+        const charCount = countCharacters(text);
+
+        wordCountElement.textContent = wordCount;
+        sentenceCountElement.textContent = sentenceCount;
+        charCountElement.textContent = charCount;
+    });
+
+    function countWords(text) {
+        const words = text.trim().split(/\s+/);
+        return words.length;
+    }
+
+    function countSentences(text) {
+        const sentences = text.split(/[.!?]/).filter(sentence => sentence.trim().length > 0);
+        return sentences.length;
+    }
+
+    function countCharacters(text) {
+        return text.length;
+    }
+});
+
+        </script>
+	</body>
+</html>

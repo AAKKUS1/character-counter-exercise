@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-image:url(./assets/BG\ Noise.svg);
+    color: white;
+    font-family: "DM Sans", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 32px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    padding: 1px;
+    gap: 15px;
+}
+.logo p{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31.2px;
+    letter-spacing: -1px;
+}
+h1 {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -1px;   
+}
+nav button {
+    padding: 11px 13px;
+    border-radius: 8px;
+    background-color: #2A2B37;
+    border: none;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+}
+h1{
+    width: 30%;
+    text-align: center;
+}
+
+.textarea-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.checkbox-container{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 24px;
+}
+.checkbox-container div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.checkbox {
+    appearance: none; 
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    background-color: #D3A0FA; 
+}
+
+
+textarea{
+    width: 70%;
+    background-color: #21222C;
+    border: solid 2px #2A2B37;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.6px;
+}
+
+.stats-container{
+    width: 56%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    justify-items: center;
+}
+.stat-card{
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 25px;
+    border-radius: 12px;
+    color: black;
+}
+#purple-card{
+    background-color: #D3A0FA;
+    background-image: url(assets/bg-purple.svg);
+}
+#orange-card{
+    background-color: #FF9F00;
+    background-image: url(/assets/bg-orange.svg);
+}
+#red-card{
+    background-color: #FE8159;
+    background-image: url(/assets/bg-red.svg); 
+}
+
+.counter-name{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: -0.6px;
+}
+.counter{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -1px;
+}

@@ -6,6 +6,7 @@ const characterlimit = document.getElementById("CharacterLimit");
 const maxLength = 99;
 const themeChanger = document.getElementById('themeChanger');
 
+
 let isDarkMode = true; 
 
 themeChanger.addEventListener('click', () => {
@@ -18,6 +19,8 @@ themeChanger.addEventListener('click', () => {
         ExcludeSpaces.style.borderColor = "black";
         ExcludeSpaces.style.borderWidth = "2px";
         themeChanger.style.backgroundColor = "grey";
+        textarea.style.backgroundColor = 'lightgray';
+        textarea.style.color = 'black';
     } else {
         document.body.style.backgroundImage = "url(./assets/BG\ Noise.svg)";
         document.body.style.backgroundColor = "#13151B";
@@ -26,7 +29,9 @@ themeChanger.addEventListener('click', () => {
         characterlimit.style.borderWidth = "2px";
         ExcludeSpaces.style.borderColor = "white";
         ExcludeSpaces.style.borderWidth = "2px";
-        themeChanger.style.backgroundColor = "black";
+        themeChanger.style.backgroundColor = "#2A2B37";
+        textarea.style.backgroundColor = '#21222C';
+        textarea.style.color = 'white';
     }
 
     isDarkMode = !isDarkMode;
